@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(17, 1, 32);
+  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+  font-family: sans-serif;
+}
+.center {
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  position: absolute;
+  color: white;
+  padding: 30px 60px;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  transition: 1s;
+  /* border-radius: 20px; */
+}
+.center:before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  width: 50%;
+  background: rgba(255, 255, 255, 0.05);
+}
+.center span:nth-child(1) {
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: linear-gradient(to right, #0c002b, #1779ff);
+  animation: anime1 2s linear infinite;
+}
+@keyframes anime1 {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+.center span:nth-child(2) {
+  width: 2px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, #0c002b, #1779ff);
+  animation: anime2 2s linear infinite;
+}
+@keyframes anime2 {
+  0% {
+    bottom: 100%;
+    /* transform: translateX(100%); */
+  }
+  100% {
+    bottom: -100%;
+    /* transform: translateX(-100%); */
+  }
+}
+.center span:nth-child(3) {
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to left, #0c002b, #1779ff);
+  animation: anime3 2s linear infinite;
+}
+@keyframes anime3 {
+  0% {
+    transform: translate(100%);
+    /* left: 100%;  */
+    /* we can write these both methods */
+  }
+  100% {
+    transform: translate(-100%);
+    /* left: -100%; */
+  }
+}
+.center span:nth-child(4) {
+  height: 100%;
+  width: 2px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: linear-gradient(to top, #0c002b, #1779ff);
+  animation: anime4 2s linear infinite;
+  animation-delay: 1s;
+}
+@keyframes anime4 {
+  0% {
+    top: 100%;
+  }
+  100% {
+    top: -100%;
+  }
+}
+.center:hover {
+  background-color: aquamarine;
+  color: black;
+  box-shadow: 0px 25px 50px rgba(131, 239, 253, 0.5);
+  border-radius: 40px;
+}
+.center:hover span {
+  background: aquamarine;
+}
